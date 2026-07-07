@@ -57,3 +57,49 @@ b = (10, 'alpha', [1, 2])
 b[-1].append(99)
 
 print(a == b)
+# the most visible form of unpacking is parrarel assignment 
+lax_cordinates = (33.9425, -108.504450)
+latttitude, longtitude = lax_cordinates
+print(latttitude)
+# equivalent to writing:
+# pythonlatttitude = lax_cordinates[0]
+# longtitude = lax_cordinates[1]
+# an elegant application is swapping the values without using a temporary variable 
+a , b = b , a
+# using * when calling a func
+t = divmod(20, 8)
+divmod(*t)
+# using * to grap excess items 
+# defining func parameter with * args to grap arbitrary excess arguments
+x, y, *rest = range(5)
+print(x, y, rest)
+print(rest)# 0 1 [2, 3, 4]
+c, f , d = rest
+print(c,f, d)
+s, *body, z, e = range(5)
+print(s, body, z, e)
+# slicing operations
+l = [10, 20, 30, 40, 50, 60]
+#     0    1    2    3    4    5    ← indices
+print(l[:2]) # [10, 20]
+print(l[2:]) # 30, 40, 50, 60
+# slice objects  stride 
+word = 'bicycle'
+print(word[::3]) # bye
+print(word[::-1])
+# Assigning to slices
+our_numbers = list(range(10))
+print(our_numbers) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+our_numbers[2:5] = 99, 9.99
+print(our_numbers)
+del our_numbers[2:5]
+print(our_numbers)
+our_numbers[3::2] = 200, 300
+print(our_numbers)
+our_numbers[2:5] = [100]
+# using + and * with sequences
+initial_list = [1, 2, 3]
+repeated = initial_list * 5 
+print(repeated)
+print(initial_list)
+# both + and * create new object never change their operands
