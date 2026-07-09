@@ -103,3 +103,38 @@ repeated = initial_list * 5
 print(repeated)
 print(initial_list)
 # both + and * create new object never change their operands
+# building lists of lists
+board = [["-"] * 3 for i in range(3)]
+# print(board)
+# a list of with three references to same list is useless
+weird_board = [["-"] * 3] * 3
+# print(weird_board)
+weird_board[1][2] = '0'
+# print(weird_board)
+# Same idea, spelled out as a full loop
+brand_board = []
+for i in range(3):
+    brand_board.append(["-"] * 3)
+print(brand_board)
+brand_board[1][2] = '0'
+print(brand_board)
+# each iteration build new row and appends it to the board only row 2 is changed 
+#  Augmented assignment with sequences += and *=
+outer_list = [1,2,3,4]
+print(id(outer_list)) # 4369910656
+outer_list *= 2
+print(outer_list)
+print(id(outer_list))  # 4380314496
+# the list is same object we appended items to it because list is mutable so we're referencing the same list is the memory 
+# let us test the tuple 
+outer_tuble = (1,2,3,4)
+print(id(outer_tuble))
+outer_tuble *= 2      # 
+print(id(outer_tuble))  # 4373860912
+# Tuple — immutable, id CHANGES
+# example 2-16 riddle 
+our_t = (1,2, [1, 2])
+our_t[2] += [50, 60]
+print(our_t)
+#  we get an exception, but the mutation happens anyway, TypeError: 'tuple' object does not support item assignment
+
