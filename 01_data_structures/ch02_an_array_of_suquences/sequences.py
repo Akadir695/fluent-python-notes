@@ -120,21 +120,45 @@ brand_board[1][2] = '0'
 print(brand_board)
 # each iteration build new row and appends it to the board only row 2 is changed 
 #  Augmented assignment with sequences += and *=
-outer_list = [1,2,3,4]
-print(id(outer_list)) # 4369910656
-outer_list *= 2
-print(outer_list)
-print(id(outer_list))  # 4380314496
+# outer_list = [1,2,3,4]
+# print(id(outer_list)) # 4369910656
+# outer_list *= 2
+# print(outer_list)
+# print(id(outer_list))  # 4380314496
 # the list is same object we appended items to it because list is mutable so we're referencing the same list is the memory 
 # let us test the tuple 
-outer_tuble = (1,2,3,4)
-print(id(outer_tuble))
-outer_tuble *= 2      # 
-print(id(outer_tuble))  # 4373860912
+# outer_tuble = (1,2,3,4)
+# print(id(outer_tuble))
+# outer_tuble *= 2      # 
+# print(id(outer_tuble))  # 4373860912
 # Tuple — immutable, id CHANGES
 # example 2-16 riddle 
-our_t = (1,2, [1, 2])
-our_t[2] += [50, 60]
-print(our_t)
+# our_t = (1,2, [1, 2])
+# our_t[2] += [50, 60]
+# print(our_t)
 #  we get an exception, but the mutation happens anyway, TypeError: 'tuple' object does not support item assignment
+"""avoid putting mutable objects in tuples this our_t[2] += [50, 60] will throw an error"""
+# list.sort the sorted built-in it does not create no list while sorted creates new creates
+fruits = ['mango', 'raspberry', 'apple', 'banana', 'strawberry']
+print(sorted(fruits, reverse=True)) # sorted list ['apple', 'banana', 'mango', 'raspberry', 'strawberry']
+print(fruits)
+# Arrays
+# example: creating,saving and loading large amount of array
+# from array import array
+# from random import random
+# floats = array('d', (random() for i in range(10**7)))
+# print(floats[-1])
+# fb = open('floats.bin', 'wb')
+# floats.tofile(fb)
+# fb.close()
+# floats2 = array('d')
+# fb = open('floats.bin', 'rb')
+# floats2.fromfile(fb, 10**7)
+# fb.close()
+# print(floats[0] == floats2[0])
+# print(floats[-1] == floats2[-1])
+import numpy as np
+a = np.arange(12)
+print(a)
+print(a.shape)
 
