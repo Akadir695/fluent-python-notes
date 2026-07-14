@@ -161,4 +161,17 @@ import numpy as np
 a = np.arange(12)
 print(a)
 print(a.shape)
-
+# deques and other queues(the class is thread-safe double ended queue designated for fast
+# inserting and removing)
+from collections import deque
+dq = deque(range(10), maxlen=10)
+print(dq)
+dq.rotate(3)
+print(dq)
+dq.rotate(-4)
+dq.appendleft(-1)
+print(dq)
+dq.extend([10,20,30,40])
+print(dq)
+dq.extendleft([10,20,30,40])
+print(dq)
