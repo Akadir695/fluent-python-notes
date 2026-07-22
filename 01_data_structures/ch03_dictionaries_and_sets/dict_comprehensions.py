@@ -67,3 +67,8 @@ print(our_dict_list)
 squared_values =  [n*n for n in  our_dict_list]
 print(squared_values)
 our_dict_list
+# view object is dynamic proxy is the dict is updated you can see the changes through an existing view
+the_values['z'] = 1002
+print(the_values)
+print(squared_values)
+# set comprehention
